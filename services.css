@@ -1,0 +1,93 @@
+/* ========================
+   СЕКЦИЯ УСЛУГ (SERVICES) - DARK MODE
+   ======================== */
+
+.services {
+  background-color: var(--bg);
+  padding: 120px 0;
+}
+
+.section__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px auto;
+}
+
+.section__subtitle {
+  display: block;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.services h2 {
+  color: var(--title);
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+/* --- ИСПРАВЛЕННАЯ СЕТКА --- */
+.services__grid {
+  display: grid;
+  /* ПО УМОЛЧАНИЮ: 4 карточки в ряд (для широких экранов) */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* КАРТОЧКА УСЛУГИ */
+.service-card {
+  background: var(--bg-secondary);
+  padding: 40px 30px; /* Чуть компактнее внутри, чтобы 4 влезли */
+  border-radius: var(--radius);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+
+  /* Чтобы карточки были одинаковой высоты */
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+.service-icon {
+  font-size: 2.5rem; /* Чуть меньше иконка, чтобы было аккуратно */
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--title);
+}
+
+.service-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- АДАПТИВНОСТЬ (СИММЕТРИЯ) --- */
+
+/* Если экран меньше 1200px (ноутбуки) -> делаем 2 на 2 */
+@media (max-width: 1200px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr); /* Строго 2 колонки */
+  }
+}
+
+/* Если экран меньше 600px (телефоны) -> делаем 1 в ряд */
+@media (max-width: 600px) {
+  .services__grid {
+    grid-template-columns: 1fr; /* 1 колонка */
+  }
+}
