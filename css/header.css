@@ -1,0 +1,79 @@
+/* ========================
+   ШАПКА (HEADER) - DARK MODE
+   ======================== */
+
+.header {
+  height: var(--nav-height); /* 80px */
+  /* Полупрозрачный темный фон */
+  background-color: rgba(15, 23, 42, 0.8);
+  /* Эффект матового стекла (размытие фона под шапкой) */
+  backdrop-filter: blur(12px);
+  /* Тонкая светлая линия снизу для разделения */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky; /* Липнет к верху */
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Контейнер выравнивает всё в ряд */
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* Логотип */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  /* Цвет заголовков (белый) */
+  color: var(--title);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Навигация (меню) */
+.header__nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header__link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  /* Основной цвет текста (светло-серый) */
+  color: var(--text);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Эффект при наведении на ссылку */
+.header__link:hover {
+  /* Цвет меняется на акцентный (неоновый) */
+  color: var(--primary);
+}
+
+/* Правая часть (Кнопка Telegram) */
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+/* АДАПТИВНОСТЬ (Для телефонов) */
+@media (max-width: 900px) {
+  .header__nav {
+    display: none; /* Скрываем меню ссылок */
+  }
+
+  .header__btn {
+    padding: 10px 15px; /* Уменьшаем кнопку */
+    font-size: 0.9rem;
+  }
+}
