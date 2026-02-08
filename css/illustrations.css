@@ -1,0 +1,194 @@
+/* ========================
+   CSS ІЛЮСТРАЦІЇ ДЛЯ КАРТОК
+   ======================== */
+
+/* Загальний контейнер для ілюстрації в картці */
+.project__image.css-illustration {
+  background: var(--bg); /* Трохи темніший фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* --- ІЛЮСТРАЦІЯ 1: ЧАТ-БОТ --- */
+.ill-bot-interface {
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ill-chat-bubble {
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  max-width: 85%;
+  position: relative;
+  animation: popIn 0.4s ease backwards;
+}
+
+.ill-chat-bubble.bot {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.ill-chat-bubble.bot i {
+  color: var(--primary);
+  margin-right: 6px;
+}
+
+.ill-chat-bubble.user {
+  background: var(--primary);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+  animation-delay: 0.2s;
+}
+
+.ill-chat-input {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 8px 8px 15px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.ill-send-btn {
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+}
+
+/* --- ІЛЮСТРАЦІЯ 2 і 3: БРАУЗЕР --- */
+.ill-browser-window {
+  width: 100%;
+  max-width: 300px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(10px);
+  transition: 0.4s ease;
+}
+.project-card:hover .ill-browser-window {
+  transform: translateY(0);
+}
+
+.ill-browser-header {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.ill-dot.red {
+  background: #ff5f56;
+}
+.ill-dot.yellow {
+  background: #ffbd2e;
+}
+.ill-dot.green {
+  background: #27c93f;
+}
+.ill-address-bar {
+  margin-left: 10px;
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  height: 14px;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.ill-website-layout {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Барбершоп */
+.ill-hero-section {
+  height: 80px;
+  background: rgba(99, 102, 241, 0.1); /* напівпрозорий primary */
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--primary);
+}
+.ill-hero-section i {
+  font-size: 1.5rem;
+}
+.ill-fake-lines {
+  height: 4px;
+  width: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+.ill-content-grid {
+  display: flex;
+  gap: 8px;
+}
+.ill-content-grid span {
+  height: 40px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+/* Портфоліо (Міні-версія) */
+.portfolio-mockup .ill-mini-hero {
+  height: 120px;
+  background: linear-gradient(45deg, var(--bg), var(--bg-secondary));
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.ill-mini-code {
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+/* Анімація появи */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
