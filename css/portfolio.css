@@ -4,9 +4,11 @@
   background-color: var(--bg);
 }
 
+/* === СЕТКА ПОРТФОЛИО С АДАПТИВОМ === */
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  /* По умолчанию (на больших экранах) - 3 колонки */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 50px;
 }
@@ -108,5 +110,28 @@
 @media (max-width: 600px) {
   .portfolio__grid {
     grid-template-columns: 1fr; /* 1 колонка на телефоне */
+  }
+}
+/* 📱 АДАПТИВ: Планшеты (экран меньше 1024px) */
+@media (max-width: 1024px) {
+  .portfolio__grid {
+    /* Переключаемся на 2 колонки */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* 📱 АДАПТИВ: Телефоны (экран меньше 768px) */
+@media (max-width: 768px) {
+  .portfolio__grid {
+    /* Строго 1 колонка на всю ширину */
+    grid-template-columns: 1fr;
+    gap: 30px; /* Отступ между карточками */
+  }
+}
+/* Трюк: На планшетах (где 2 колонки) последняя нечетная карточка растягивается */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .portfolio__grid .project-card:last-child:nth-child(odd) {
+    grid-column: span 2; /* Растянись на 2 колонки */
   }
 }
